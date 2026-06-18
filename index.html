@@ -1,31 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Aplikasi Keuangan Sederhana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps Script Web App</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --background-color: #f8f9fa;
+            --text-color: #3c4043;
+            --card-background: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-background);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #202124;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #5f6368;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1557b0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #9aa0a6;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Sistem Keuangan</h1>
-
-    <button onclick="loadData()">Ambil Data</button>
-
-    <div id="hasil"></div>
-
-    <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxniPB7XJOenXHbzXW6uodQuxNBXGKe542FKShYfoACzfN3i1MOUFbIalXuqiNk6Hlw6Q/exec";
-
-        async function loadData() {
-            try {
-                const response = await fetch(SCRIPT_URL);
-                const data = await response.json();
-
-                document.getElementById("hasil").innerHTML =
-                    JSON.stringify(data);
-            } catch (err) {
-                console.error(err);
-            }
-        }
-    </script>
+    <div class="container">
+        <div class="card">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 22H22L12 2Z" fill="#1a73e8"/>
+            </svg>
+            
+            <h1>Google Apps Script Project</h1>
+            <p>Selamat datang! Aplikasi web ini berhasil terhubung dan dikelola menggunakan repositori GitHub. Anda dapat menyesuaikan halaman ini sesuai dengan kebutuhan proyek Anda.</p>
+            
+            <a href="https://script.google.com/macros/s/AKfycbxniPB7XJOenXHbzXW6uodQuxNBXGKe542FKShYfoACzfN3i1MOUFbIalXuqiNk6Hlw6Q/exec" target="_blank" class="btn">Buka Aplikasi</a>
+            
+            <div class="footer">
+                Dibuat dengan Google Apps Script & GitHub Assistant
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
